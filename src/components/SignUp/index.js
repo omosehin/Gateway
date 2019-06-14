@@ -4,11 +4,12 @@ import {withRouter} from 'react-router-dom'
 import { Container, Jumbotron, Row, Col, Button } from "reactstrap";
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Register from '../../Assets/external-link-symbol.svg'
+// import {Validate} from '../Shared/Validation';
 import "./Register.css";
 const MainRegister = props => {
   const [values, setValues] = useState({})
-  const [userAction, setuserAction] = useState('Sign Up')
-  
+  const [isSubmitting,setIsSubmiting] =useState(false)
+  const [userAction, setuserAction] = useState('Sign Up')  
   const gotoSignIn =_=>{
     setuserAction('Sign In')
   }
@@ -16,16 +17,18 @@ const MainRegister = props => {
     setuserAction('Sign Up')
   }
   const handleChange = (e) =>{
-    setValues([e.target.name]:(e.target.value))
+    setValues({...values,[e.target.name]:(e.target.value)})
   }
   const handleSignUpSubmit = (e) =>{
       e.preventDefault()
-      console.log(userAction)
+      setIsSubmiting(true)
+      console.log(values)
   }
   const handleSignInSubmit = (e) =>{
       e.preventDefault()
-      console.log(userAction)
+      console.log(values)
   }
+
   
   return (
     <div>
@@ -44,7 +47,7 @@ const MainRegister = props => {
             name="username" 
             value = {values.username}
             placeholder="UserName"
-            OnChange={handleChange}
+            onChange={handleChange}
             required
             className = 'input'
              />
@@ -55,7 +58,7 @@ const MainRegister = props => {
             id="email"
             value = {values.email}
             placeholder="Email"
-            OnChange={handleChange}
+            onChange={handleChange}
             required
             className = 'input'
              />
@@ -66,7 +69,7 @@ const MainRegister = props => {
             id="password"
             value = {values.password}
             placeholder="Password"
-            OnChange={handleChange}
+            onChange={handleChange}
             required
             className = 'input'
              />
@@ -77,7 +80,7 @@ const MainRegister = props => {
             id = "password2" 
             value = {values.password2}
             placeholder="Confirm Password"
-            OnChange={handleChange}
+            onChange={handleChange}
             required
             className = 'input'
              />
@@ -94,7 +97,7 @@ const MainRegister = props => {
             id="email"
             value = {values.email}
             placeholder="Email"
-            OnChange={handleChange}
+            onChange={handleChange}
             required
             className = 'input'
              />
@@ -105,18 +108,20 @@ const MainRegister = props => {
             id="password"
             value = {values.password}
             placeholder="Password"
-            OnChange={handleChange}
+            onChange={handleChange}
             required
             className = 'input'
              />
              </FormGroup>       
       }
-      <Input
-             value={userAction ==='Sign Up' ? 'Sign Up':'Sign In'}
+      <button
+            
              className = 'mt-5 submit'
              type="submit" 
              onClick = {userAction === 'Sign Up'? handleSignUpSubmit : handleSignInSubmit}
-             />
+             >
+            {userAction ==='Sign Up' ? 'Sign Up':'Sign In'}
+      </button>
           </Form>
          {userAction === 'Sign Up' && <div  className = 'text-center text-white d-flex justify-content-around mt-3'>
           <p>Already has an account</p>

@@ -3,14 +3,14 @@ import React,{useState} from "react";
 import { Container, Jumbotron, Row, Col, Button } from "reactstrap";
 import MainRegister from './index.js'
 import "./Register.css";
-import '../Navigation/SideDrawer/SideDrawer.css'
+// import '../Navigation/SideDrawer/SideDrawer.css'
 const Register = props => {
   const [showSignUp, setshowSignUp] = useState('false')
 
   const openSignUpPage = ()=>{
       setshowSignUp(showSignUp ==='false' ?'true':'false')
   }
-  let drawerClasses =showSignUp ==='true'  ? "sign-drawer open" : "sign-drawer";
+  let drawerClasses =showSignUp ==='true'  ? "registerCard opened" : "registerCard";
 
   return (
     <div>

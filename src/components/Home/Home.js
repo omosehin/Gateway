@@ -64,7 +64,7 @@ const Home = props => {
         <Jumbotron fluid className="ThirdContainer">
           <Container>
             <Row>
-              <Col sm="6" lg={{ size: "auto", offset: 1 }} class>
+              <Col sm="6" lg={{ size: "auto", offset: 1 }}>
                 <img className="" src={Tote} alt="img" />
               </Col>
               <Col sm="6" lg={{ size: "auto", offset: 4 }}>
