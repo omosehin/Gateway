@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 import "normalize.css/normalize.css";
-import { content } from "../Shared/SliderTwo";
+import { content } from "../Shared/SliderThree";
 import "../Shared/Animations.css";
 import "../Shared/Styles.css";
  const SliderOne = props => {
@@ -13,7 +13,7 @@ import "../Shared/Styles.css";
 
     return (
         <div>
-        <Slider className="slider-wrapper"  autoplay = {3}>
+        <Slider className="slider-wrapper" autoplay = {3}>
               {content.map((item, index) => (
                 <div
                   key={index}

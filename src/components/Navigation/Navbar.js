@@ -4,22 +4,23 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer'
 import Backdrop from '../Navigation/Backdrop/Backdrop'
 
 const Navbar = () =>{
-    const [sideDrawerOpen, DrawerOpen] = useState('false')
+    // const [sideDrawerOpen, DrawerOpen] = useState('false')
 
-    const drawerToggleClickedHandler = () =>{
-        DrawerOpen(sideDrawerOpen ==='true' ?'false':'true')
-    }
+    // const drawerToggleClickedHandler = () =>{
+    //     DrawerOpen(sideDrawerOpen ==='true' ?'false':'true')
+    // }
 
-    const toggleBackdropHandler = () => {
-        DrawerOpen(false)        
-    }
+    // const toggleBackdropHandler = () => {
+    //     DrawerOpen(false)        
+    // }
 
     return(
         <div style={{height:'100%'}}>       
-        <Toolbar drawerClickedHandler = {drawerToggleClickedHandler} show ={sideDrawerOpen}/>
-        <SideDrawer show = {sideDrawerOpen} onClick ={toggleBackdropHandler}/>
-        {sideDrawerOpen && <Backdrop clickedBackdrop = {toggleBackdropHandler}/>}
-        </div>
+        {/* <Toolbar/> */}
+        {/* <SideDrawer show = {sideDrawerOpen} onClick ={toggleBackdropHandler}/>
+        {sideDrawerOpen && <Backdrop clickedBackdrop = {toggleBackdropHandler}/>}*/}
+       
+        </div> 
     );
 }
 export default Navbar;
